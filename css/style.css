@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --border: #f5f5f5;
+  --header-back: #231815;
+  --orange: #e45302;
+  --darkGray: #808080;
+  --footer-back: #0c0c0c;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fontsLato/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fontsLato/Lato-bold.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fontsLato/Lato-Black.ttf");
+}
+@font-face {
+  font-family: "Korataki";
+  src: url("../fonts/Korataki/korataki.otf");
+}
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: var(--header-back);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Lato", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.href-outline {
+  text-decoration: underline;
+}
+.wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* header */
+
+.header__top {
+  background-color: var(--header-back);
+  color: var(--white);
+  font-size: 1rem;
+  padding: 12px 0;
+}
+
+.header__top-ul {
+  display: flex;
+  justify-content: right;
+  gap: 70px;
+}
+
+.header__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  min-height: 80px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+#menu-btn {
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+.header__bottom-ul {
+  display: flex;
+  font-size: 1rem;
+  line-height: 16px;
+  font-weight: 600;
+  /* gap: 100px; */
+  gap: 6vw;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.header__bottom-ul a {
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.header__bottom-btns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search {
+  border-radius: 88.64px;
+  border: 1px solid var(--border);
+  max-width: 170px;
+  padding: 11px 55px 12px 21px;
+  font-size: 1rem;
+}
+
+#search::placeholder {
+  color: var(--header-back);
+}
+
+.header__bottom-search {
+  position: relative;
+}
+
+.btn-search {
+  position: absolute;
+  right: 16px;
+  top: 9px;
+  bottom: 0;
+}
+
+.header__bottom-search-dark {
+  display: none;
+}
+
+.btn-search-dark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-dark {
+  border-radius: 88.64px;
+  border: 1px solid var(--border);
+  max-width: 39px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--header-back);
+}
+
+.btn-basket {
+  background-color: var(--header-back);
+  color: var(--white);
+  border-radius: 100px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 19px;
+  font-size: 1rem;
+  position: relative;
+  border: none;
+}
+
+.btn-basket::after {
+  position: absolute;
+  content: "3";
+  width: 18px;
+  height: 18px;
+  background-color: var(--white);
+  color: var(--header-back);
+  border-radius: 50%;
+  top: 2px;
+  right: 0;
+  left: 30px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main */
+.main {
+  flex: 1;
+}
+
+h2 {
+  margin: 60px 0 40px 0;
+  font-size: 44px;
+  line-height: 61.6px;
+  font-family: "Korataki", sans-serif;
+  text-align: left;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 155px));
+  grid-gap: 40px;
+  padding-bottom: 60px;
+}
+
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  position: relative;
+}
+
+.catalog__item-img {
+  position: relative;
+}
+
+.catalog__item-btn {
+  border-radius: 0px 0px 20px 20px;
+  background-color: rgba(245, 245, 245, 0.7);
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 31px;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.catalog__item-btn button {
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 13px 87px;
+  border: none;
+  border-radius: 48px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.catalog__item:hover .catalog__item-btn {
+  opacity: 1;
+}
+
+.action::after {
+  position: absolute;
+  content: "Акция";
+  background-color: var(--header-back);
+  color: var(--white);
+  padding: 12px 40px;
+  font-size: 1rem;
+  top: 10px;
+  left: 10px;
+  border-radius: 100px;
+}
+
+.catalog__item img {
+  border-radius: 20px;
+}
+
+.catalog__item-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 25.2px;
+}
+
+.catalog__item-name {
+  margin: 20px 0 12px 0;
+}
+
+.price {
+  font-size: 1.375rem;
+}
+
+.price-discount {
+  color: var(--orange);
+}
+
+.price-crossed {
+  color: var(--darkGray);
+  margin-left: 16px;
+}
+
+/* footer */
+.footer {
+  background-color: var(--footer-back);
+  padding: 62px 0;
+  color: var(--darkGray);
+  font-size: 1rem;
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 54px;
+  align-items: flex-start;
+}
+
+.footer__wrapper .logo {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.footer__item-adress {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.grid-row {
+  grid-area: 1 / 3 / 3 / 4;
+}
+.footer__item-hrefs {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.footer__item-policy {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.footer__item-contacts {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.footer__item-cards {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--border);
+}
+
+.footer__item a {
+  color: var(--border);
+}
+
+.span-white {
+  color: var(--white);
+}
+
+.footer__item-hrefs a {
+  color: var(--darkGray);
+}
+
+.grid-row {
+  grid-row: span 2;
+}
+
+.footer__item-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
